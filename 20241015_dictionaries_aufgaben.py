@@ -190,9 +190,6 @@ laender_sortiert_ausgeben() """
 # Aufgabe 7
 # Erstelle ein Dictionary mit fünf Tieren und deren Anzahl im Lager aus einem Tierhandel. Schreibe ein
 # Programm, das die Summe aller Werte im Dicitonary berechnet und ausgibt.
-
-def
- 
  
 # Aufgabe 8
 # Du findest ein Dictionary mit den Namen von Schülern als Schlüssel und deren Noten als Werte.
