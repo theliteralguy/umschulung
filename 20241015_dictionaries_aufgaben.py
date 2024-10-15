@@ -190,12 +190,29 @@ laender_sortiert_ausgeben() """
 # Aufgabe 7
 # Erstelle ein Dictionary mit fünf Tieren und deren Anzahl im Lager aus einem Tierhandel. Schreibe ein
 # Programm, das die Summe aller Werte im Dicitonary berechnet und ausgibt.
+
+""" tiere = {
+    "Hunde": 3,
+    "Katzen": 2,
+    "Vögel": 5,
+    "Fische": 10,
+    "Hamster": 100
+}
+
+def tieranzahl(tiere):
+    sum = 0
+    for keys,values in tiere.items():
+        sum += values
+    print(sum)
+
+tieranzahl(tiere) """
+
  
 # Aufgabe 8
 # Du findest ein Dictionary mit den Namen von Schülern als Schlüssel und deren Noten als Werte.
 # Schreibe ein Programm, das den Notendurchschnitt aller Noten berechnet (benutze values() und keys())
  
-students = {
+""" students = {
     "Alan": 1,
     "Jacques": 6,
     "Gerhard": 1,
@@ -203,3 +220,8 @@ students = {
     "Susanne":2
 }
  
+def average(students):
+    result = sum(students.values()) / len(students.keys())
+    print(f"The average score is: {result }")
+
+average(students) """
