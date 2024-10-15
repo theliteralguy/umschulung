@@ -191,7 +191,23 @@ laender_sortiert_ausgeben() """
 # Erstelle ein Dictionary mit fünf Tieren und deren Anzahl im Lager aus einem Tierhandel. Schreibe ein
 # Programm, das die Summe aller Werte im Dicitonary berechnet und ausgibt.
 
-def
+# Dictionary mit Tieren und deren Anzahl im Lager
+tiere = {
+    "Hunde": 15,
+    "Katzen": 10,
+    "Vögel": 25,
+    "Fische": 100,
+    "Hamster": 8
+}
+
+# Funktion zur Berechnung der Summe aller Werte im Dictionary
+def gesamtanzahl_tiere():
+    gesamtanzahl = sum(tiere.values())
+    print(f"Die Gesamtanzahl der Tiere im Lager beträgt: {gesamtanzahl}")
+
+# Funktion aufrufen, um die Summe auszugeben
+gesamtanzahl_tiere()
+
  
  
 # Aufgabe 8
@@ -201,8 +217,25 @@ def
 students = {
     "Alan": 1,
     "Jacques": 6,
-    "Gerhard": 1,
+    "Gerhard": 4,
     "Willi": 4,
     "Susanne":2
 }
  
+ # Dictionary mit Namen der Schüler und deren Noten
+schueler_noten = {
+    "Anna": 2,
+    "Ben": 3,
+    "Clara": 1,
+    "David": 4,
+    "Eva": 2
+}
+
+# Funktion zur Berechnung des Notendurchschnitts
+def notendurchschnitt_berechnen():
+    summe = sum(schueler_noten.values())  # Summe aller Noten
+    anzahl = len(schueler_noten.keys())   # Anzahl der Schüler (Schlüssel im Dictionary)
+    durchschnitt = summe / anzahl         # Berechnung des Durchschnitts
+    print(f"Der Notendurchschnitt beträgt: {durchschnitt:.2f}")
+
+notendurchschnitt_berechnen()
