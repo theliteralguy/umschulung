@@ -339,7 +339,7 @@ starte_spiel()
 
 
 
-spielfeld = [[' ', ' ', ' '] for x in range(1, 4)]
+""" spielfeld = [[' ', ' ', ' '] for x in range(1, 4)]
 
 
 def zeichne_spielfeld(spielfeld):
@@ -436,4 +436,4 @@ def starte_spiel():
 
 
 starte_spiel()
-
+ """
