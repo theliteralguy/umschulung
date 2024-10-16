@@ -50,8 +50,8 @@ else:
 # Aufgabe 3
 # Erstelle ein Dictionary, das 5 Lebensmittel und ihre Preise enthält. Baue eine Funktion, die neue Produkte und
 # deren Preise speichert. Erweitere deine Funktion, indem du nach einem
-# Artikel suchst und gib ihn mit seinem Preis aus. Wenn der Artikel nicht gefunden wurde, soll der Artikel gespeichert werden und einen
-# Standardpreis von 0 zurückgegeben
+# Artikel suchst und gib ihn mit seinem Preis aus. Wenn der Artikel nicht gefunden wurde, soll der Artikel gespeichert
+# werden und einen Standardpreis von 0 zurückgegeben
  
  # Dictionary mit Lebensmitteln und ihren Preisen
 """ lebensmittel = {
@@ -87,7 +87,39 @@ produkt_hinzufuegen("Butter", 1.80)
  """
 
 
+#####jacques solution:
 
+
+""" products = {
+    "apple": 3.99,
+    "pineapple": 4.99,
+    "eggs": 3.95,
+    "chickenwings": 5.99,
+    "pizza": 2.99
+}
+ 
+ 
+ 
+def save_products():
+ 
+    choice = int(input("Möchtest du ein neues Produkt speichern oder ein Produkt suchen? 1 : Produkt speichern, 2 : Produkt suchen"))
+ 
+    if choice == 1:
+        new_product = input("Bitte gib ein neues Produkt ein: ")
+        price = float(input("Bitte gib einen Preis für das neue Produkt ein: "))
+        products.update({new_product : price})
+        print(f"Das neue Produkt {new_product} wurde mit einem Preis von {price} gespeichert")
+    elif choice == 2:
+        search = input("Bitte gib das Produkt ein, welches du suchst: ")
+        if search in products:
+            result = products.get(search)
+            print(f"Das Produkt {search} wurde gefunden. Es kostet {result}")
+        elif search not in products:
+            products.setdefault(search,0)
+            print(f"Es wurde ein neues Produkt {search} hinzugefügt welches standardmäßig {products.get(search)} kostet")
+    print(products)
+   
+save_products() """
 
 
 
@@ -104,10 +136,19 @@ produkt_hinzufuegen("Butter", 1.80)
 # das durch die Schlüssel des Dictionaries iteriert und nur die Namen der Personen ausgibt
 
 """ my_dict = {"John": 30,"Alex": 20, "Athena": 35}
-for key,value in my_dict.items():
+for key in my_dict.keys():
     print(key) """
  
+ ###Jacques:
+
+""" persons = {
+    "German": 25,
+    "Patrick": 28,
+    "Roland": 22
+}
  
+for names in persons.keys():
+    print(names) """
 
 
 
@@ -145,6 +186,22 @@ def verfuegbare_artikel_anzeigen():
 verfuegbare_artikel_anzeigen() """
 
 
+##jacques
+
+""" articles = {
+    "Screws": 10000,
+    "Wood": 0,
+    "Nails": 100,
+    "toolkit": 10,
+    "scanner": 2,
+    "paper": 0,
+}
+ 
+for key, value in articles.items():
+    if value > 0:
+        print(key, value) """
+
+
 
 
 
@@ -167,7 +224,6 @@ verfuegbare_artikel_anzeigen() """
 
 # Funktion, um die Länder alphabetisch zu sortieren und auszugeben
 def laender_sortiert_ausgeben():
-    print("Länder in alphabetischer Reihenfolge:")
     for land in sorted(countries.keys()):
         print(land)
 
@@ -192,7 +248,7 @@ laender_sortiert_ausgeben() """
 # Programm, das die Summe aller Werte im Dicitonary berechnet und ausgibt.
 
 # Dictionary mit Tieren und deren Anzahl im Lager
-tiere = {
+""" tiere = {
     "Hunde": 15,
     "Katzen": 10,
     "Vögel": 25,
@@ -200,13 +256,12 @@ tiere = {
     "Hamster": 8
 }
 
-# Funktion zur Berechnung der Summe aller Werte im Dictionary
 def gesamtanzahl_tiere():
     gesamtanzahl = sum(tiere.values())
     print(f"Die Gesamtanzahl der Tiere im Lager beträgt: {gesamtanzahl}")
 
 # Funktion aufrufen, um die Summe auszugeben
-gesamtanzahl_tiere()
+gesamtanzahl_tiere() """
 
  
  
@@ -214,7 +269,7 @@ gesamtanzahl_tiere()
 # Du findest ein Dictionary mit den Namen von Schülern als Schlüssel und deren Noten als Werte.
 # Schreibe ein Programm, das den Notendurchschnitt aller Noten berechnet (benutze values() und keys())
  
-students = {
+""" students = {
     "Alan": 1,
     "Jacques": 6,
     "Gerhard": 4,
@@ -231,11 +286,145 @@ schueler_noten = {
     "Eva": 2
 }
 
-# Funktion zur Berechnung des Notendurchschnitts
 def notendurchschnitt_berechnen():
-    summe = sum(schueler_noten.values())  # Summe aller Noten
-    anzahl = len(schueler_noten.keys())   # Anzahl der Schüler (Schlüssel im Dictionary)
-    durchschnitt = summe / anzahl         # Berechnung des Durchschnitts
+    summe = sum(schueler_noten.values()) 
+    anzahl = len(schueler_noten.keys()) 
+    durchschnitt = summe / anzahl
     print(f"Der Notendurchschnitt beträgt: {durchschnitt:.2f}")
 
-notendurchschnitt_berechnen()
+notendurchschnitt_berechnen() """
+
+
+
+
+
+
+
+# Aufgabe 9
+# Erstelle ein Dictionary, das den Umsatz verschiedener Filialen eines Unternehmens speichert.
+# Nutze den Filialnamen als Schlüssel und den Umsatz als Wert.
+# Schreibe ein Programm, das die Filiale mit dem höchsten Umsatz identifiziert und den Namen
+# der Filiale sowie den Umsatz ausgibt
+ 
+# Dictionary mit den Umsätzen der Filialen
+
+
+
+# Dictionary mit den Umsätzen der Filialen
+""" umsatz = {
+    'Filiale A': 15000,
+    'Filiale B': 22000,
+    'Filiale C': 18000,
+    'Filiale D': 25000,
+    'Filiale E': 21000
+}
+
+hoechste_filiale = ''
+hoechster_umsatz = 0
+
+# Über das Dictionary iterieren, um die Filiale mit dem höchsten Umsatz zu finden
+for filiale, betrag in umsatz.items():
+    if betrag > hoechster_umsatz:
+        hoechster_umsatz = betrag
+        hoechste_filiale = filiale
+
+# Ergebnis ausgeben
+print("Die Filiale mit dem höchsten Umsatz ist:", hoechste_filiale)
+print("Umsatz:", hoechster_umsatz, "Euro") """
+
+
+
+
+
+
+
+
+# Aufgabe 10
+# Erstelle ein Wörterbuch, welches die Preise von 5 Artikeln speichert. Verwende items() um durch die Schlüssel
+# Wert Paare zu iterieren und alle Artikel, deren Preis über 10 € liegt, auszugeben
+
+# Wörterbuch mit den Preisen der Artikel
+""" preise = {
+    'Apfel': 2.50,
+    'Brot': 1.80,
+    'Käse': 12.00,
+    'Schokolade': 8.50,
+    'Wein': 15.00
+}
+
+for artikel, preis in preise.items():
+    if preis > 10:
+        print(f"Artikel: {artikel}, Preis: {preis} €") """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ # Aufgabe 11
+# Erstelle ein Dictionary, das die Punktzahl von Spielern in einem Videospiel speichert.
+# Der Spielername ist der Schlüssel und die Punktzahl der Wert. Schreibe ein Programmm, welches den Spieler ausgibt,
+# der die höchste Punktzahl hat. (Benutze items())
+ 
+ 
+
+
+
+
+# Dictionary mit den Punktzahlen der Spieler
+""" punkte = {
+    'Spieler1': 1500,
+    'Spieler2': 2300,
+    'Spieler3': 1800,
+    'Spieler4': 2700,
+    'Spieler5': 2200
+}
+
+# Variablen für den Spieler mit der höchsten Punktzahl
+bester_spieler = ''
+hoechste_punktzahl = 0
+
+# Durch das Dictionary iterieren und den Spieler mit der höchsten Punktzahl finden
+for spieler, punktzahl in punkte.items():
+    if punktzahl > hoechste_punktzahl:
+        hoechste_punktzahl = punktzahl
+        bester_spieler = spieler
+
+print("Der Spieler mit der höchsten Punktzahl ist:", bester_spieler)
+print("Punktzahl:", hoechste_punktzahl) """
+
+
+
+
+
+
+
+
+
+
+
+
+# AUfgabe 12
+# Erstelle ein Dictionary mit Informationen über einen Film (z.B.: Titel, Jahr, Genre). Schreibe ein Programm dass
+# das Dictionary mithilfe von update um die Bewertung des Films erweitert.
+
+# Dictionary mit Informationen über einen Film
+film = {
+    'Titel': 'The Fountain',
+    'Jahr': 2006,
+    'Genre': 'Sci-fi'
+}
+
+# Das Dictionary mit einer Bewertung erweitern
+film.update({'Bewertung': 7.2})
+
+print(film)
