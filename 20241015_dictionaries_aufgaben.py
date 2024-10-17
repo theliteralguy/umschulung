@@ -589,31 +589,18 @@ student_graduations = {
 }
 
 
-# Initialize the student dictionary
-student_graduations = {
-    "Micky": 1,
-    "Daisy": 3,
-    "Donald": 6,
-    "Dagobert": 1,
-    "Goofy": 3,
-}
 
 def add_student(student_dict):
-    # Check the number of students in the dictionary
     if len(student_dict) < 5:
-        # Get user input for the new student
-        name = input("Gib den Namen des Studenten ein: ")
+        name = input("Gib den Namen des Studentes ein: ")
         grade = int(input("Gib die Note des Studenten ein: "))
-        # Store the student in the dictionary
         student_dict[name] = grade
-        print(f"{name} wurde erfolgreich gespeichert mit der Note {grade}.")
+        print(f"{name} wurde mit der Note {grade} erfolgreich gespeichert. ")
     else:
-        # Calculate the average grade
         average_grade = sum(student_dict.values()) / len(student_dict)
-        print(f"Der Notendurchschnitt aller Studenten ist: {average_grade:.2f}")
+        print(f"Der Notendurchschnitt alle Studenten ist: {average_grade:.2f}")
         
-        # Ask the user if they want to reset the dictionary
-        choice = input("Möchten Sie das Dictionary löschen? (ja/nein): ").strip().lower()
+        choice = input("Möchten Sie das Dictionary löschen? (ja/nein): ").lower()
         if choice == 'ja':
             reset_dictionary(student_dict)
         else:
@@ -621,15 +608,11 @@ def add_student(student_dict):
             return
 
 def reset_dictionary(student_dict):
-    # Clear the dictionary
     student_dict.clear()
-    # Get user input for the new student
-    name = input("Gib den Namen des neuen Studenten ein: ")
-    grade = int(input("Gib die Note des neuen Studenten ein: "))
-    # Store the new student in the dictionary
+    name = input("Gib den Namen des neuen Studentes ein: ")
+    grade = int(input("Gib die Note des neuen Studentes ein: "))
     student_dict[name] = grade
-    print(f"{name} wurde erfolgreich gespeichert mit der Note {grade}.")
+    print(f"{name} wurde mit der Note {grade} erfolgreich gespeichert .")
 
-# Main execution
 add_student(student_graduations)
 
