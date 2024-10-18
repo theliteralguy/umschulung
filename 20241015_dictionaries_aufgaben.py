@@ -588,9 +588,7 @@ student_graduations = {
     "Goofy": 3,
 }
 
-
-
-def add_student(student_dict):
+""" def add_student(student_dict):
     if len(student_dict) < 5:
         name = input("Gib den Namen des Studentes ein: ")
         grade = int(input("Gib die Note des Studenten ein: "))
@@ -614,5 +612,46 @@ def reset_dictionary(student_dict):
     student_dict[name] = grade
     print(f"{name} wurde mit der Note {grade} erfolgreich gespeichert .")
 
-add_student(student_graduations)
+add_student(student_graduations) """
 
+
+
+
+#Jacques solution
+
+""" student_graduations = {
+    "Micky": 1,
+    "Daisy": 3,
+    "Donald": 6,
+    "Dagobert": 1,
+    "Goofy": 3,
+}
+ 
+def save_new_student(data):
+    student_graduations.clear()
+    student_graduations.update(data)
+    print(f"Der neue Student {list(data.keys())[0]} wurde erfolgreich gespeichert")
+    print(f"gespeicherte Studenten: {len(student_graduations.keys())}")
+ 
+ 
+def check_and_update_student_score():
+ 
+    student_name = input("Bitte gib einen Namen für den Studenten ein: ")
+    graduation = int(input("Bitte gib die Note des Studenten ein: "))
+   
+    if len(student_graduations.keys()) < 5:
+        student_graduations.update({student_name: graduation})
+        print(f"Der Datensatz wurde erfolgreich mit dem Studenten {student_name} mit der Note {graduation} ergänzt")
+    else:
+        graduation_average = sum(student_graduations.values()) / len(student_graduations.keys())
+        print(f"Es sind schon {len(student_graduations.keys())} Studenten gespeichert.")
+        print(f"Der Notendurchschnitt aller gespeicherten Studenten beträgt {graduation_average}")
+        choice_to_save = int(input("Möchtest du den neuen Studenten speichern und alle alten Einträge löschen? 1: Ja, 2: Nein"))
+        if choice_to_save == 1:
+            save_new_student({student_name: graduation})
+        elif choice_to_save == 2:
+            print("Programm beendet und der neue Student wurde verworfen")
+            return
+             
+check_and_update_student_score() """
+ 
