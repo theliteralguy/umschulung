@@ -48,7 +48,7 @@ sportarten_studio1 = {"Fußball", "Basketball", "Tennis"}
 sportarten_studio2 = {"Tennis", "Golf", "Schwimmen"}
 
 lieblings_set = sportarten_studio1.difference(sportarten_studio2)
-#print(lieblings_set)
+print(lieblings_set)
  
 
 
