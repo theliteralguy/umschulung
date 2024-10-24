@@ -83,3 +83,79 @@ def teilen(a, b):
 #teilen(10, 2)  # Korrekt
 #teilen(10, 0)  # Fehler wegen Division durch Null
 
+
+
+
+
+# Aufgabe 4
+# Du findest eine Liste mit 5 Zahlen. Der Benutzer soll einen Index eingeben
+# und das Programm gibt das Element an dieser Position aus. Verwende Error Handling um einen
+# IndexError und einen ValueError abzufangen wenn der Benutzer keinen gültige Index eingibt
+# (Am liebsten durch eine seperate exception)
+ 
+ 
+numbers = [10, 20, 30, 40, 50]
+
+def get_element():
+    while True:
+        try:
+            index = int(input("Gib einen Index ein (0-4): "))
+            print(f"Element an Index {index} ist: {numbers[index]}")
+            break
+        except ValueError:
+            print("Bitte gib nur eine Zahl ein.")
+            continue
+        except IndexError:
+            print("Der Index muss innerhalb von 0 - 4 sein.")
+            continue
+# get_element()
+
+
+
+
+# Aufgabe 5
+# Wenn der Benutzer einen Namen eingibt, der nicht im Dictionary existiert, soll eine Meldung
+# "Fehler: Name nicht gefunden!" ausgegeben werden. Verwende KeyError.
+ 
+
+ 
+""" mitarbeiter = {
+    "Daniel": 25,
+    "Lukas": 30,
+    "Serhat": 15,
+    "Georg": 66,
+    "Mandy": 11
+}
+
+name = input("Gib den Namen ein: ").capitalize()
+
+try:
+    print(f"{name} is {mitarbeiter[name]} Jahre alt.")
+except KeyError:
+    print(f"Fehler: {name} Name nicht gefunden!")
+ """
+
+
+#jacques solution:
+
+mitarbeiter = {
+    "Daniel": 25,
+    "Lukas": 30,
+    "Serhat": 15,
+    "Georg": 66,
+    "Mandy": 11
+}
+
+def find_name():
+    while True:
+        try:
+            name = input("Bitte gib den Namen der gesuchten Person ein: ")
+            print(f"Der Name {name} wurde gefunden. {name} ist {mitarbeiter[name]} Jahre alt")
+            break
+        except KeyError:
+            print(f"Fehler: Name nicht gefunden!")
+            continue
+ 
+ 
+# find_name()
+ 
