@@ -5,23 +5,38 @@
         "alter": 25
     },
     {
-        "name": "Matthias", 
-        "nachname": "Warning", 
+        "name": "Matthias",
+        "nachname": "Warning",
         "alter": 23
     },
     {
-        "name": "Ronny", 
-        "nachname": "Eichler",
-         "alter": 85
-        },
-    {
         "name": "Ronny",
-        "nachname": "Eichler", 
+        "nachname": "Eichler",
         "alter": 85
     },
     {
-        "name": "Ronny", 
-        "nachname": "Eichler", 
+        "name": "Ronny",
+        "nachname": "Eichler",
+        "alter": 85
+    },
+    {
+        "name": "Ronny",
+        "nachname": "Eichler",
+        "alter": 85
+    },
+    {
+        "name": "John",
+        "nachname": "Ricky",
+        "alter": 85
+    },
+    {
+        "name": "John",
+        "nachname": "Ricky",
+        "alter": 85
+    },
+    {
+        "name": "John",
+        "nachname": "Ricky",
         "alter": 85
     }
 ]
