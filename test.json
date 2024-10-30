@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Christian",
+        "nachname": "Gatz",
+        "alter": 25
+    },
+    {
+        "name": "Matthias", 
+        "nachname": "Warning", 
+        "alter": 23
+    },
+    {
+        "name": "Ronny", 
+        "nachname": "Eichler",
+         "alter": 85
+        },
+    {
+        "name": "Ronny",
+        "nachname": "Eichler", 
+        "alter": 85
+    },
+    {
+        "name": "Ronny", 
+        "nachname": "Eichler", 
+        "alter": 85
+    }
+]
