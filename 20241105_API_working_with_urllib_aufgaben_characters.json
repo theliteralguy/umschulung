@@ -1,0 +1,52 @@
+[
+    {
+        "race": "Half-Elf",
+        "class": "Ranger",
+        "attributes": {
+            "Strength": 22,
+            "Intelligence": 35,
+            "Agility": 10
+        },
+        "created_at": "2024-11-06, 14:13:11"
+    },
+    {
+        "race": "Dragonborn",
+        "class": "Barbarian",
+        "attributes": {
+            "Strength": 40,
+            "Intelligence": 35,
+            "Agility": 43
+        },
+        "created_at": "2024-11-06, 14:13:12"
+    },
+    {
+        "race": "Dragonborn",
+        "class": "Ranger",
+        "attributes": {
+            "Strength": 46,
+            "Intelligence": 7,
+            "Agility": 13
+        },
+        "created_at": "2024-11-06, 14:13:13"
+    },
+    {
+        "race": "Dwarf",
+        "class": "Fighter",
+        "attributes": {
+            "Strength": 41,
+            "Intelligence": 31,
+            "Agility": 14
+        },
+        "created_at": "2024-11-06, 14:13:14"
+    },
+    {
+        "race": "Tiefling",
+        "class": "Warlock",
+        "attributes": {
+            "Strength": 32,
+            "Intelligence": 26,
+            "Agility": 13
+        },
+        "created_at": "2024-11-06, 14:13:15"
+    }
+]
