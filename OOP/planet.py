@@ -47,6 +47,6 @@ class Planet:
             print(f"Not enough food to add {human.name}.")
 
     def __str__(self):
-        return (f"Planet Name: {self.name}\nPopulation: {self.population}\nFood: {self.food}\n"
+        return (f"Planet Name: {self.name}, Population: {self.population}, Food: {self.food}\n"
                 f"Wood: {self.wood}, Stone: {self.stone}, Gold: {self.gold}\n"
-                f"Buildings: {', '.join(self.buildings)}\nHumans: {len(self.humans)}")
+                f"Buildings: {', '.join(self.buildings)}, Humans: {len(self.humans)}")

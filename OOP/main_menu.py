@@ -23,6 +23,7 @@ class MainMenu:
             print("No planets available. Please create a planet first.")
             time.sleep(2)
             return None
+
         print("Available planets:")
         for idx, planet in enumerate(self.planets):
             print(f"{idx + 1}: {planet.name}")
@@ -86,7 +87,7 @@ class MainMenu:
     def start(self):
         while True:
             os.system('cls' if os.name == 'nt' else 'clear')
-            print("1: Create a new planet")
+            print("\n\n1: Create a new planet")
             print("2: Build a structure")
             print("3: Create a human")
             print("4: Exit program")
