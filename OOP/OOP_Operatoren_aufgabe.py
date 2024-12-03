@@ -9,7 +9,6 @@
 # Aufgabe 1: Rectangle Class with overloaded equality operator (__eq__)
 """ class Rectangle:
     def __init__(self, width, height):
-        # Initialize width and height
         self.width = width
         self.height = height
 
@@ -18,7 +17,7 @@
         return self.width * self.height
 
     def __eq__(self, other):
-        # Check if the other object is a Rectangle and compare areas
+        # compare areas
         return self.area() == other.area()
 
 # Example for Aufgabe 1
@@ -59,40 +58,53 @@ print(rect1.area()) """
 
 class Point3D:
     def __init__(self, x, y, z):
-        # Initialize the coordinates
         self.x = x
         self.y = y
         self.z = z
 
+    # Addition zweier Punkte
     def __add__(self, other):
-        # Add two points' coordinates
+        if not isinstance(other, Point3D):
+            raise TypeError("Can only add Point3D objects")
         return Point3D(self.x + other.x, self.y + other.y, self.z + other.z)
 
+    # Subtraktion zweier Punkte
     def __sub__(self, other):
-        # Subtract two points' coordinates
+        if not isinstance(other, Point3D):
+            raise TypeError("Can only subtract Point3D objects")
         return Point3D(self.x - other.x, self.y - other.y, self.z - other.z)
 
+    # Überprüfung auf Gleichheit
     def __eq__(self, other):
-        # Compare coordinates for equality
-        return self.x == other.x and self.y == other.y and self.z == other.z
+        if not isinstance(other, Point3D):
+            return False
+        return self.x == other.x and self.y == other.y and self.z == other.z 
 
+    # Berechnung des Abstands zum Ursprung
     def __abs__(self):
-        # Calculate distance from the origin
-        return math.sqrt(self.x ** 2 + self.y ** 2 + self.z ** 2)
+        return math.sqrt(self.x**2 + self.y**2 + self.z**2)
 
     def __str__(self):
-        # Return a readable string representation of the Point3D instance
-        return f"Point3D(x={self.x}, y={self.y}, z={self.z})"
+        return f"({self.x}, {self.y}, {self.z})"
 
-# Example for Aufgabe 2
+
+# Beispielhafte Verwendung:
 p1 = Point3D(1, 2, 3)
 p2 = Point3D(4, 5, 6)
-p3 = Point3D(1, 2, 3)
 
-print(p1 + p2)        # Point3D(5, 7, 9)
-print(p2 - p1)        # Point3D(3, 3, 3)
-print(p1 == p3)       # True, identical points
-print(abs(p1))        # 3.7416573867739413 (distance from origin) """
+# Addition
+p3 = p1 + p2
+print(p3)  # Ausgabe: Point3D(x=5, y=7, z=9)
+
+# Subtraktion
+p4 = p2 - p1
+print(p4)  # Ausgabe: Point3D(x=3, y=3, z=3)
+
+# Gleichheitsprüfung
+print(p1 == p2)  # Ausgabe: False
+
+# Abstand zum Ursprung
+print(abs(p1))  # Ausgabe: 3.7416573867739413 """
 
 
 
@@ -203,7 +215,7 @@ print(acc4.balance)  # 550 """
         # Multiply width and height by a factor
         return Fläche(self.width * factor, self.height * factor)
 
-    def __str__(self):
+    def __repr__(self):
         # Return a readable representation
         return f"Fläche(width={self.width}, height={self.height})"
 
