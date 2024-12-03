@@ -19,9 +19,7 @@
 
     def __eq__(self, other):
         # Check if the other object is a Rectangle and compare areas
-        if isinstance(other, Rectangle):
-            return self.area() == other.area()
-        return False
+        return self.area() == other.area()
 
 # Example for Aufgabe 1
 rect1 = Rectangle(4, 5)
@@ -29,7 +27,8 @@ rect2 = Rectangle(10, 2)
 rect3 = Rectangle(3, 6)
 
 print(rect1 == rect2)  # True, areas are both 20
-print(rect1 == rect3)  # False, areas are 20 and 18 """
+print(rect1 == rect3)  # False, areas are 20 and 18
+print(rect1.area()) """
 
 
 
@@ -55,7 +54,7 @@ print(rect1 == rect3)  # False, areas are 20 and 18 """
 # Überprüfe ob die Übergebenen Objekte der gleichen Klasse Point3D entspricht und führe die Operatoren nur aus, wenn dies zutrifft.
  
 
-# Aufgabe 2: Point3D Class with arithmetic and comparison operators
+
 """ import math
 
 class Point3D:
@@ -67,21 +66,15 @@ class Point3D:
 
     def __add__(self, other):
         # Add two points' coordinates
-        if isinstance(other, Point3D):
-            return Point3D(self.x + other.x, self.y + other.y, self.z + other.z)
-        return NotImplemented
+        return Point3D(self.x + other.x, self.y + other.y, self.z + other.z)
 
     def __sub__(self, other):
         # Subtract two points' coordinates
-        if isinstance(other, Point3D):
-            return Point3D(self.x - other.x, self.y - other.y, self.z - other.z)
-        return NotImplemented
+        return Point3D(self.x - other.x, self.y - other.y, self.z - other.z)
 
     def __eq__(self, other):
         # Compare coordinates for equality
-        if isinstance(other, Point3D):
-            return self.x == other.x and self.y == other.y and self.z == other.z
-        return False
+        return self.x == other.x and self.y == other.y and self.z == other.z
 
     def __abs__(self):
         # Calculate distance from the origin
@@ -134,26 +127,18 @@ print(abs(p1))        # 3.7416573867739413 (distance from origin) """
  
 """ class BankAccount:
     def __init__(self, balance):
-        # Initialize the account balance
         self.balance = balance
 
     def __eq__(self, other):
-        # Compare balances for equality
-        if isinstance(other, BankAccount):
-            return self.balance == other.balance
-        return False
+        return self.balance == other.balance
 
     def __lt__(self, other):
         # Compare if this balance is less than another balance
-        if isinstance(other, BankAccount):
-            return self.balance < other.balance
-        return NotImplemented
+        return self.balance < other.balance
 
     def __gt__(self, other):
         # Compare if this balance is greater than another balance
-        if isinstance(other, BankAccount):
-            return self.balance > other.balance
-        return NotImplemented
+        return self.balance > other.balance
 
     def __iadd__(self, amount):
         # Add to balance in-place
@@ -162,9 +147,7 @@ print(abs(p1))        # 3.7416573867739413 (distance from origin) """
 
     def __add__(self, other):
         # Combine balances of two accounts
-        if isinstance(other, BankAccount):
-            return BankAccount(self.balance + other.balance)
-        return NotImplemented
+        return BankAccount(self.balance + other.balance)
 
 # Example for Aufgabe 3
 acc1 = BankAccount(300)
@@ -179,8 +162,8 @@ acc1 += 50           # Add 50 to acc1
 print(acc1.balance)  # 350
 
 acc4 = acc1 + acc2   # Combine acc1 and acc2
-print(acc4.balance)  # 550
- """
+print(acc4.balance)  # 550 """
+
 
 
 
@@ -218,11 +201,9 @@ print(acc4.balance)  # 550
 
     def __mul__(self, factor):
         # Multiply width and height by a factor
-        if isinstance(factor, (int, float)):
-            return Fläche(self.width * factor, self.height * factor)
-        return NotImplemented
+        return Fläche(self.width * factor, self.height * factor)
 
-    def __repr__(self):
+    def __str__(self):
         # Return a readable representation
         return f"Fläche(width={self.width}, height={self.height})"
 
@@ -231,5 +212,5 @@ area = Fläche(4, 5)
 scaled_area = area * 3
 
 print(area)          # Fläche(width=4, height=5)
-print(scaled_area)   # Fläche(width=12, height=15)
- """
+print(scaled_area)   # Fläche(width=12, height=15) """
+
