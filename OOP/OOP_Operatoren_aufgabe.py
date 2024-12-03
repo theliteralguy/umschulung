@@ -1,3 +1,5 @@
+#change
+
 # Aufgabe 1
 # Erstelle eine Klasse Rectangle, die ein Rechteck durch die Attribute width und height repräsentiert.
 # Überlade den == Operator __eq__, sodass zwei Rechtecke als gleich betrachtet werden, wenn ihre Fläche gleich ist.
