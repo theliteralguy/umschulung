@@ -80,7 +80,7 @@ auto.beschreiben()
 
 
  
- # Basisklasse Tier
+"""  # Basisklasse Tier
 class Tier:
     def __init__(self, name, art):
         # Attribute der Klasse Tier
@@ -127,7 +127,7 @@ maus.info()
 
 chinchilla = Chinchilla("Flauschi", "Chinchilla")
 chinchilla.geraeusch_machen()
-chinchilla.info()
+chinchilla.info() """
 
 
 
@@ -148,12 +148,92 @@ chinchilla.info()
 # Verwende dabei super()
  
  
+
+
+
+
+
+
+
+
+"""  # Basisklasse Mitarbeiter
+class Mitarbeiter:
+    def __init__(self, name, gehalt):
+        # Attribute für Mitarbeiter
+        self.name = name
+        self.gehalt = gehalt
+
+    def arbeiten(self):
+        # Standardarbeitsmethode
+        print(f"{self.name} arbeitet.")
+
+# Subklasse Manager
+class Manager(Mitarbeiter):
+    def __init__(self, name, gehalt, teamgroesse):
+        # Attribute erben und erweitern
+        super().__init__(name, gehalt)
+        self.teamgroesse = teamgroesse
+
+    def arbeiten(self):
+        # Methode überschreiben, super() nutzen
+        super().arbeiten()
+        print(f"{self.name} leitet ein Team von {self.teamgroesse} Personen.")
+
+# Test
+mitarbeiter = Mitarbeiter("Alice", 3000)
+mitarbeiter.arbeiten()
+
+manager = Manager("Bob", 5000, 5)
+manager.arbeiten() """
+
+
+
+
+
+
+
+
+
+
+
 # Aufgabe 4
 # Erstelle die Klasse Läufer und Schwimmer, jede mit einer Methode, die ihre Fähigkeit beschreibt (laufen und schwimmen)
 # Erstelle eine Klasse Triathlet, die von beiden Klassen erbt und alle Fähigkeiten vereint.
 # Teste den Zugriff auf die geerbeten Methoden
  
  
+
+
+
+
+
+
+
+"""  # Klassen Läufer und Schwimmer
+class Läufer:
+    def laufen(self):
+        print("Ich kann laufen.")
+
+class Schwimmer:
+    def schwimmen(self):
+        print("Ich kann schwimmen.")
+# Klasse Triathlet, die von beiden erbt
+class Triathlet(Läufer, Schwimmer):
+    pass
+
+# Test
+triathlet = Triathlet()
+triathlet.laufen()
+triathlet.schwimmen() """
+
+
+
+
+
+
+
+
+
 # Aufgabe 5
 # importiere ABC (Abstract Base Class) und abstractmethod aus dem Modul abc
 # Erstelle eine abstrakte Klasse Figur mit einer abstrakten Methode flaeche() und einer normalen Methode beschreibung(),
@@ -163,6 +243,63 @@ chinchilla.info()
 # Gib die berechnete Fläche und die Beschreibung aus
  
  
+
+
+
+
+
+
+
+
+""" 
+from abc import ABC, abstractmethod
+
+# Abstrakte Klasse Figur
+class Figur(ABC):
+    @abstractmethod
+    def flaeche(self):
+        # Abstrakte Methode
+        pass
+
+    def beschreibung(self):
+        print("Das ist eine geometrische Figur.")
+
+# Subklasse Kreis
+class Kreis(Figur):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def flaeche(self):
+        return 3.14 * self.radius**2
+
+# Subklasse Rechteck
+class Rechteck(Figur):
+    def __init__(self, breite, hoehe):
+        self.breite = breite
+        self.hoehe = hoehe
+
+    def flaeche(self):
+        return self.breite * self.hoehe
+
+# Test
+kreis = Kreis(5)
+kreis.beschreibung()
+print("Fläche des Kreises:", kreis.flaeche())
+
+rechteck = Rechteck(4, 6)
+rechteck.beschreibung()
+print("Fläche des Rechtecks:", rechteck.flaeche()) """
+
+
+
+
+
+
+
+
+
+
+
 # Aufgabe 6
 # Erstelle eine Basisklasse Bankkonto mit Kontonummer und kontostand als Attribute
 # Erstelle darin die Methoden einzahlen(betrag) und auszahlen(betrag)
@@ -170,3 +307,61 @@ chinchilla.info()
 # Erstelle die Subklasse Sparkonto mit einem Attribut zins_satz und einer Methode zinsen_hinzufügen
 # Erstelle die Subklasse Girokono, welches einen Dispo-Kreditrahmen besitzt und auszahlen(betrag) entsprechend anpasst
 # Simuliere mit diesen Klassen eine Bank, indem du mehrere Konten erstellst und Transaktionen durchführst.
+
+
+
+
+
+
+
+
+
+""" # Basisklasse Bankkonto
+class Bankkonto:
+    def __init__(self, kontonummer, kontostand):
+        self.kontonummer = kontonummer
+        self.kontostand = kontostand
+
+    def einzahlen(self, betrag):
+        self.kontostand += betrag
+        print(f"{betrag} eingezahlt. Neuer Kontostand: {self.kontostand}")
+
+    def auszahlen(self, betrag):
+        if self.kontostand >= betrag:
+            self.kontostand -= betrag
+            print(f"{betrag} ausgezahlt. Neuer Kontostand: {self.kontostand}")
+        else:
+            print("Nicht genug Guthaben.")
+
+# Subklasse Sparkonto
+class Sparkonto(Bankkonto):
+    def __init__(self, kontonummer, kontostand, zins_satz):
+        super().__init__(kontonummer, kontostand)
+        self.zins_satz = zins_satz
+
+    def zinsen_hinzufügen(self):
+        zinsen = self.kontostand * self.zins_satz / 100
+        self.kontostand += zinsen
+        print(f"Zinsen von {zinsen} hinzugefügt. Neuer Kontostand: {self.kontostand}")
+
+# Subklasse Girokonto
+class Girokonto(Bankkonto):
+    def __init__(self, kontonummer, kontostand, dispo):
+        super().__init__(kontonummer, kontostand)
+        self.dispo = dispo
+
+    def auszahlen(self, betrag):
+        if self.kontostand + self.dispo >= betrag:
+            self.kontostand -= betrag
+            print(f"{betrag} ausgezahlt. Neuer Kontostand: {self.kontostand}")
+        else:
+            print("Dispo-Kreditrahmen überschritten.")
+
+# Test
+sparkonto = Sparkonto("12345", 1000, 2)
+sparkonto.einzahlen(200)
+sparkonto.zinsen_hinzufügen()
+
+girokonto = Girokonto("54321", 500, 300)
+girokonto.auszahlen(600)
+girokonto.auszahlen(300) """
