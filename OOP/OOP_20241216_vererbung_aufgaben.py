@@ -112,7 +112,7 @@ class Chinchilla(Tier):
     # Verwendt die Methode aus der Basisklasse, kein Überschreiben nötig
     pass
 
-# Test
+# Teest
 hund = Hund("Rex", "Hund")
 hund.geraeusch_machen()
 hund.info()
