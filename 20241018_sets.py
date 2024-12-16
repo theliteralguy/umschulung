@@ -15,7 +15,7 @@ zahlen.remove(3)
  
  
 # Aufgabe 3
-# Verwende `discard()` für die Farbe "blau" und gib dein set aus
+# Verwnde `discard()` für die Farbe "blau" und gib dein set aus
 farben = {"rot", "gelb", "grün", "schwarz", "weiß"}
 farben.discard("blau")
 #print(farben)
