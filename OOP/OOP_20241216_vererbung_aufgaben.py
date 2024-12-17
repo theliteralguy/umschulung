@@ -20,12 +20,10 @@
 """ # Basisklasse Fahrzeug
 class Fahrzeug:
     def __init__(self, marke, farbe):
-        # Attribute der Klasse Fahrzeug
         self.marke = marke
         self.farbe = farbe
 
     def beschreiben(self):
-        # Methode, die die Fahrzeugdetails beschreibt
         print(f"Das Fahrzeug ist ein {self.farbe} {self.marke}.")
 
 # Subklasse Auto
@@ -45,8 +43,8 @@ fahrzeug = Fahrzeug("Toyota", "rot")
 fahrzeug.beschreiben()
 
 auto = Auto("BMW", "blau", 4)
-auto.beschreiben()
- """
+auto.beschreiben() """
+
 
 
 
@@ -80,66 +78,87 @@ auto.beschreiben()
 
 
  
-""" # Basisklasse Tier
-class Tier:
+""" class Tier:
     def __init__(self, name, art):
         self.name = name
         self.art = art
-
+    
     def geraeusch_machen(self):
         print("Das Tier macht ein Geräusch")
-
+    
     def info(self):
-        return f"Name: {self.name}, Art: {self.art}"
+        print(f"Name: {self.name}")
+        print(f"Art: {self.art}")
 
-# Subklasse Hund
 class Hund(Tier):
+    def __init__(self, name, art, rasse):
+        super().__init__(name, art)
+        self.rasse = rasse
+    
     def geraeusch_machen(self):
         print("WuffiWuff")
-
+    
     def info(self):
-        return super().info() + ", Rasse: Hund"
+        super().info()
+        print(f"Rasse: {self.rasse}")
 
-# Subklasse Katze
 class Katze(Tier):
+    def __init__(self, name, art, rasse):
+        super().__init__(name, art)
+        self.rasse = rasse
+    
     def geraeusch_machen(self):
         print("Ich bin Tom")
-
+    
     def info(self):
-        return super().info() + ", Rasse: Katze"
+        super().info()
+        print(f"Rasse: {self.rasse}")
 
-# Subklasse Maus
 class Maus(Tier):
+    def __init__(self, name, art, rasse):
+        super().__init__(name, art)
+        self.rasse = rasse
+    
     def geraeusch_machen(self):
         print("Ich bin Jerry und ärgere Tom")
-
+    
     def info(self):
-        return super().info() + ", Rasse: Maus"
+        super().info()
+        print(f"Rasse: {self.rasse}")
 
-# Subklasse Chinchilla
 class Chinchilla(Tier):
-    # Die Methode geraeusch_machen wird hier nicht überschrieben, weil sie von der bassisklasse gerbt wird.
+    def __init__(self, name, art, rasse):
+        super().__init__(name, art)
+        self.rasse = rasse
+    
+    def geraeusch_machen(self):
+        super().geraeusch_machen()
+    
     def info(self):
-        return super().info() + ", Rasse: Chinchilla"
+        super().info()
+        print(f"Rasse: {self.rasse}")
 
-# Testfälle
-hund = Hund("Bello", "Haustier")
+# Beispiele
+hund = Hund("Bello", "Hund", "Schäferhund")
+katze = Katze("Tom", "Katze", "Hauskatze")
+maus = Maus("Jerry", "Maus", "Feldmaus")
+chinchilla = Chinchilla("Chinchi", "Chinchilla", "HausChinchilla")
+
+print("Geräusche:")
 hund.geraeusch_machen()
-print(hund.info())
-
-katze = Katze("Tom", "Haustier")
 katze.geraeusch_machen()
-print(katze.info())
-
-maus = Maus("Jerry", "Wildtier")
 maus.geraeusch_machen()
-print(maus.info())
-
-chinchilla = Chinchilla("Chilli", "Exotisches Haustier")
 chinchilla.geraeusch_machen()
-print(chinchilla.info()) """
+
+print("\nInfos:")
+hund.info()
+katze.info()
+maus.info()
+chinchilla.info()
 
 
+#Nein, Sie müssen die Methode geraeusch_machen() beim Chinchilla nicht überschreiben, wenn Sie möchten, dass
+# es das Geräusch der Basisklasse Tier ausgibt. """ 
 
 
 
