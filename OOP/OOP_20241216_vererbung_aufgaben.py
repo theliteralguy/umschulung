@@ -46,8 +46,8 @@ fahrzeug.beschreiben()
 
 auto = Auto("BMW", "blau", 4)
 auto.beschreiben()
-
  """
+
 
 
 
@@ -80,54 +80,64 @@ auto.beschreiben()
 
 
  
-"""  # Basisklasse Tier
+""" # Basisklasse Tier
 class Tier:
     def __init__(self, name, art):
-        # Attribute der Klasse Tier
         self.name = name
         self.art = art
 
     def geraeusch_machen(self):
-        # Standardgeräusch
-        print("Das Tier macht ein Geräusch.")
+        print("Das Tier macht ein Geräusch")
 
     def info(self):
-        # Info über das Tier
-        print(f"Name: {self.name}, Art: {self.art}")
+        return f"Name: {self.name}, Art: {self.art}"
 
-# Subklassen
+# Subklasse Hund
 class Hund(Tier):
     def geraeusch_machen(self):
-        print("WuffiWuff!")
+        print("WuffiWuff")
 
+    def info(self):
+        return super().info() + ", Rasse: Hund"
+
+# Subklasse Katze
 class Katze(Tier):
     def geraeusch_machen(self):
-        print("Ich bin Tom!")
+        print("Ich bin Tom")
 
+    def info(self):
+        return super().info() + ", Rasse: Katze"
+
+# Subklasse Maus
 class Maus(Tier):
     def geraeusch_machen(self):
-        print("Ich bin Jerry und ärgere Tom!")
+        print("Ich bin Jerry und ärgere Tom")
 
+    def info(self):
+        return super().info() + ", Rasse: Maus"
+
+# Subklasse Chinchilla
 class Chinchilla(Tier):
-    # Verwendt die Methode aus der Basisklasse, kein Überschreiben nötig
-    pass
+    # Die Methode geraeusch_machen wird hier nicht überschrieben, weil sie von der bassisklasse gerbt wird.
+    def info(self):
+        return super().info() + ", Rasse: Chinchilla"
 
-# Teest
-hund = Hund("Rex", "Hund")
+# Testfälle
+hund = Hund("Bello", "Haustier")
 hund.geraeusch_machen()
-hund.info()
+print(hund.info())
 
-katze = Katze("Tom", "Katze")
+katze = Katze("Tom", "Haustier")
 katze.geraeusch_machen()
-katze.info()
+print(katze.info())
 
-maus = Maus("Jerry", "Maus")
+maus = Maus("Jerry", "Wildtier")
 maus.geraeusch_machen()
-maus.info()
+print(maus.info())
 
-chinchilla = Chinchilla("Flauschi", "Chinchilla")
+chinchilla = Chinchilla("Chilli", "Exotisches Haustier")
 chinchilla.geraeusch_machen()
-chinchilla.info() """
+print(chinchilla.info()) """
 
 
 
@@ -175,7 +185,7 @@ class Manager(Mitarbeiter):
         self.teamgroesse = teamgroesse
 
     def arbeiten(self):
-        # Methode überschreiben, super() nutzen
+        # Methode überschreiben, super()
         super().arbeiten()
         print(f"{self.name} leitet ein Team von {self.teamgroesse} Personen.")
 
@@ -184,8 +194,8 @@ mitarbeiter = Mitarbeiter("Alice", 3000)
 mitarbeiter.arbeiten()
 
 manager = Manager("Bob", 5000, 5)
-manager.arbeiten() """
-
+manager.arbeiten()
+ """
 
 
 
@@ -208,8 +218,8 @@ manager.arbeiten() """
 
 
 
-
-"""  # Klassen Läufer und Schwimmer
+""" 
+ # Klassen Läufer und Schwimmer
 class Läufer:
     def laufen(self):
         print("Ich kann laufen.")
@@ -251,8 +261,8 @@ triathlet.schwimmen() """
 
 
 
-""" 
-from abc import ABC, abstractmethod
+
+""" from abc import ABC, abstractmethod
 
 # Abstrakte Klasse Figur
 class Figur(ABC):
